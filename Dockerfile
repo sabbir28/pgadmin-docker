@@ -16,7 +16,7 @@ ENV PGADMIN_DEFAULT_PASSWORD=admin
 EXPOSE 80
 
 # Switch to non-root user for security
-USER pgadmin
+# USER pgadmin
 
 # Start pgAdmin using gunicorn without sudo or special privileges
 # CMD ["gunicorn", "--bind", "0.0.0.0:80", "--chdir", "/pgadmin4", "pgadmin4:app"]
