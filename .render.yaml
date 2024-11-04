@@ -2,7 +2,7 @@ services:
   - type: web
     name: pgAdmin
     env: docker
-    plan: free # You can change to a paid plan if needed
+    plan: free
     dockerfilePath: ./Dockerfile
     envVars:
       - key: PGADMIN_DEFAULT_EMAIL
