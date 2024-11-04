@@ -19,4 +19,4 @@ EXPOSE 80
 USER pgadmin
 
 # Start pgAdmin using gunicorn without sudo or special privileges
-CMD ["gunicorn", "--bind", "0.0.0.0:80", "--chdir", "/pgadmin4", "pgadmin4:app"]
+# CMD ["gunicorn", "--bind", "0.0.0.0:80", "--chdir", "/pgadmin4", "pgadmin4:app"]
