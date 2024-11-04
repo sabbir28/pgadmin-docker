@@ -6,7 +6,7 @@ ENV PGADMIN_DEFAULT_EMAIL=admin@example.com
 ENV PGADMIN_DEFAULT_PASSWORD=admin
 
 # Remove sudo commands from the entrypoint script to avoid permission issues
-RUN sed -i '/sudo/d' /entrypoint.sh
+# RUN sed -i '/sudo/d' /entrypoint.sh
 
 # Update permissions to allow the 'pgadmin' user to execute necessary commands
 RUN chmod +x /entrypoint.sh && \
