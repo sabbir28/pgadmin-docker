@@ -6,7 +6,7 @@ services:
     dockerfilePath: ./Dockerfile
     envVars:
       - key: PGADMIN_DEFAULT_EMAIL
-        value: admin@example.com  # Change to your preferred email
+        value: admin@example.com
       - key: PGADMIN_DEFAULT_PASSWORD
-        value: admin              # Change to your preferred password
+        value: admin
     healthCheckPath: /
