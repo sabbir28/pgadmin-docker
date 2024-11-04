@@ -1,0 +1,15 @@
+version: '3'
+services:
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin_container
+    environment:
+      PGADMIN_DEFAULT_EMAIL: sabbirb228@gmail.com  # Change this to your preferred admin email
+      PGADMIN_DEFAULT_PASSWORD: password           # Change this to your preferred admin password
+    ports:
+      - "80:80"  # Exposes pgAdmin on port 80
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+
+volumes:
+  pgadmin_data:
