@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: pgAdmin
+    env: docker
+    plan: free # You can change to a paid plan if needed
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PGADMIN_DEFAULT_EMAIL
+        value: admin@example.com  # Change to your preferred email
+      - key: PGADMIN_DEFAULT_PASSWORD
+        value: admin              # Change to your preferred password
+    healthCheckPath: /
