@@ -1,22 +1,22 @@
-# Start from the official dpage/pgadmin4 image, which includes the necessary dependencies
+# Start from the official pgAdmin image
 FROM dpage/pgadmin4:latest
 
 # Set environment variables for pgAdmin
 ENV PGADMIN_DEFAULT_EMAIL=admin@example.com
 ENV PGADMIN_DEFAULT_PASSWORD=admin
 
-# Remove sudo commands from the entrypoint script
+# Remove sudo commands from the entrypoint script to avoid permission issues
 RUN sed -i '/sudo/d' /entrypoint.sh
 
-# Change permissions to allow the pgAdmin user to execute necessary commands
+# Update permissions to allow the 'pgadmin' user to execute necessary commands
 RUN chmod +x /entrypoint.sh && \
     chmod -R 755 /pgadmin4
 
-# Expose pgAdmin’s default port
+# Expose the default port for pgAdmin
 EXPOSE 80
 
-# Set the non-root user
+# Switch to non-root user for security
 USER pgadmin
 
-# Run pgAdmin with gunicorn directly without sudo or special privileges
+# Start pgAdmin using gunicorn without sudo or special privileges
 CMD ["gunicorn", "--bind", "0.0.0.0:80", "--chdir", "/pgadmin4", "pgadmin4:app"]
