@@ -9,8 +9,8 @@ ENV PGADMIN_DEFAULT_PASSWORD=admin
 # RUN sed -i '/sudo/d' /entrypoint.sh
 
 # Update permissions to allow the 'pgadmin' user to execute necessary commands
-RUN chmod +x /entrypoint.sh && \
-    chmod -R 755 /pgadmin4
+#RUN chmod +x /entrypoint.sh && \
+#    chmod -R 755 /pgadmin4
 
 # Expose the default port for pgAdmin
 EXPOSE 80
